@@ -37,4 +37,5 @@ This project also improved my ability to **debug complex interactions**, work wi
 # Screenshots
 ![image](https://github.com/user-attachments/assets/7a0f8749-590b-49e4-b309-a4dcb2931181)
 ![image](https://github.com/user-attachments/assets/611f54f1-59e7-4c43-93c0-d2f4af352df7)
+![image](https://github.com/user-attachments/assets/b0c2303c-85c5-43c1-ae11-18fc5feb744c)
 
