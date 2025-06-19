@@ -16,3 +16,6 @@ Clean and minimalist **design with pixel-art** aesthetics for a nostalgic yet mo
 
 **Fully built with GDScript:**
 All mechanics, systems, and UI programmed from scratch using GDScript in Godot Engine.
+
+# Development challenges
+Everything was straightforward to implement until I reached the integration of **legal move highlights**, which introduced a new level of complexity due to the interaction between **turn logic**, **board state updates**, and **special rule conditions**.
