@@ -19,3 +19,10 @@ All mechanics, systems, and UI programmed from scratch using GDScript in Godot E
 
 # Development challenges
 Everything was straightforward to implement until I reached the integration of **legal move highlights**, which introduced a new level of complexity due to the interaction between **turn logic**, **board state updates**, and **special rule conditions**.
+
+# What I learned
+Developing ChessMate helped me consolidate **my skills** in **game logic**, **state management**, and **rule-based systems**. I gained hands-on experience **structuring gameplay mechanics** using GDScript in the Godot Engine, and learned how to design clean, modular code for turn-based logic.
+
+The most **challenging part** was **implementing legal move validation and piece highlighting**, which required synchronizing game state, move legality, and UI feedback in real time.
+
+This project also improved my ability to **debug complex interactions**, work with 2D arrays, and design user-friendly interfaces from scratch.
