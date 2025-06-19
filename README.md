@@ -26,3 +26,10 @@ Developing ChessMate helped me consolidate **my skills** in **game logic**, **st
 The most **challenging part** was **implementing legal move validation and piece highlighting**, which required synchronizing game state, move legality, and UI feedback in real time.
 
 This project also improved my ability to **debug complex interactions**, work with 2D arrays, and design user-friendly interfaces from scratch.
+
+# Tech Stack
+- **Language:** GDScript
+- **Engine:** Godot Engine (2D)
+- **UI Design:** Custom-built using Godot nodes (Control, etc.)
+- **Data Structures:** 2D arrays, dictionaries for board state
+- **Tools:** GIMP, Godot editor, Git for version control
