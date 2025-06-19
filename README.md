@@ -7,3 +7,12 @@ Developed entirely in **GDScript** using the **Godot Engine**, ChessMate feature
 # Features
 **Comprehensive chess rules implementation:**
 Includes all standard chess mechanics such as **check**, **checkmate**, **stalemate**, **legal moves validation** and **pawn promotion**. I'm looking forward to the implementation of **castling** and **en passant**.
+
+**Turn-based logic & move highlighting:**
+**Visual indicators for legal moves** that enhance clarity for new players.
+
+**Pixel-art inspired UI:**
+Clean and minimalist **design with pixel-art** aesthetics for a nostalgic yet modern look.
+
+**Fully built with GDScript:**
+All mechanics, systems, and UI programmed from scratch using GDScript in Godot Engine.
