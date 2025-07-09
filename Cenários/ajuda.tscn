@@ -1,0 +1,440 @@
+[gd_scene load_steps=21 format=3 uid="uid://c8bhq25unt060"]
+
+[ext_resource type="Texture2D" uid="uid://dr5pbax6gf34o" path="res://Imagens/white_pawn.png" id="1_p4ndw"]
+[ext_resource type="FontFile" uid="uid://b6a4gm1poounk" path="res://fonts/Silkscreen-Regular.ttf" id="2_7clgb"]
+[ext_resource type="Texture2D" uid="uid://cxj37gdqhsve7" path="res://Imagens/white_knight.png" id="3_bdpys"]
+[ext_resource type="Texture2D" uid="uid://b68j72cnkvmy6" path="res://Imagens/white_bishop.png" id="4_dyd62"]
+[ext_resource type="Texture2D" uid="uid://dmki5cwbajxlb" path="res://Imagens/white_rook.png" id="5_tergy"]
+[ext_resource type="Texture2D" uid="uid://3ntxi5yj3edd" path="res://Imagens/white_queen.png" id="6_2mcj4"]
+[ext_resource type="Texture2D" uid="uid://c7b1sg2b4lrq6" path="res://Imagens/white_king.png" id="7_veqtu"]
+[ext_resource type="Script" path="res://Cenários/ajuda_script.gd" id="8_mh47c"]
+
+[sub_resource type="Gradient" id="Gradient_b3cjs"]
+offsets = PackedFloat32Array(0, 0.246377, 0.391304, 0.521739, 0.666667, 0.949275, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.379428, 0.42326, 0.943222, 1, 0.776471, 0.776471, 0.87451, 0.74902, 0.384797, 0.461956, 0.964231, 1, 0.63399, 0.466805, 0.949594, 1, 0.571715, 0.53854, 0.634641, 1, 0.321569, 0.423529, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1k3o7"]
+gradient = SubResource("Gradient_b3cjs")
+
+[sub_resource type="Animation" id="Animation_yt7tc"]
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/TextureRect/Cavalo:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 1.05), Vector2(1.2, 1.2), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_i3mw3"]
+resource_name = "bispo_animation"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/TextureRect/Bispo:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 1.05), Vector2(1.2, 1.2), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_rma8t"]
+resource_name = "cavalo_animation"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/TextureRect/Cavalo:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 1.05), Vector2(1.2, 1.2), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_in5xi"]
+resource_name = "peao_animation"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/TextureRect/Peao:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 1.05), Vector2(1.2, 1.2), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_rhtls"]
+resource_name = "rainha_animation"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/TextureRect/Rainha:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 1.05), Vector2(1.2, 1.2), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_bmbv3"]
+resource_name = "rei_animation"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/TextureRect/Rei:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 1.05), Vector2(1.2, 1.2), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_ewr0h"]
+resource_name = "torre_animation"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/TextureRect/Torre:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 1.05), Vector2(1.2, 1.2), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fv3hy"]
+_data = {
+"RESET": SubResource("Animation_yt7tc"),
+"bispo_animation": SubResource("Animation_i3mw3"),
+"cavalo_animation": SubResource("Animation_rma8t"),
+"peao_animation": SubResource("Animation_in5xi"),
+"rainha_animation": SubResource("Animation_rhtls"),
+"rei_animation": SubResource("Animation_bmbv3"),
+"torre_animation": SubResource("Animation_ewr0h")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_042lu"]
+bg_color = Color(1, 1, 1, 0.239216)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_wkk5w"]
+Button/styles/hover = SubResource("StyleBoxFlat_042lu")
+
+[node name="Ajuda" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -82.0
+offset_top = -40.0
+offset_right = 3073.0
+offset_bottom = 1935.0
+texture = SubResource("GradientTexture1D_1k3o7")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+offset_right = 998.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(0.858824, 0.388235, 0.152941, 0.831373)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0.556863)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_7clgb")
+theme_override_font_sizes/font_size = 30
+text = "Projeto desenvolvido 
+por Alexandre
+Taveira 12ºPC
+no âmbito da 
+PAP 2024/2025"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -144.0
+offset_right = -176.0
+offset_bottom = 506.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Peao" type="TextureRect" parent="MarginContainer/VBoxContainer/TextureRect"]
+layout_mode = 2
+offset_left = -8.0
+offset_top = -169.0
+offset_right = 94.0
+offset_bottom = -79.0
+texture = ExtResource("1_p4ndw")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TextureRect/Peao"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -22.0
+offset_right = 682.0
+offset_bottom = 47.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_7clgb")
+text = "Peão: Numa distância de uma casa, 
+move-se em sentido ascendente.
+Captura diagonalmente."
+
+[node name="peao_anim" type="AnimationPlayer" parent="MarginContainer/VBoxContainer/TextureRect/Peao"]
+root_node = NodePath("../../../../..")
+libraries = {
+"": SubResource("AnimationLibrary_fv3hy")
+}
+script = ExtResource("8_mh47c")
+
+[node name="Cavalo" type="TextureRect" parent="MarginContainer/VBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = -7.0
+offset_top = -57.0
+offset_right = 89.0
+offset_bottom = 31.0
+texture = ExtResource("3_bdpys")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TextureRect/Cavalo"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -45.0
+offset_right = 687.0
+offset_bottom = 48.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_7clgb")
+text = "Cavalo: Move-se em L; um movimento 
+de duas casas
+na horizontal/vertical e
+uma lateral."
+
+[node name="cavalo_anim" type="AnimationPlayer" parent="MarginContainer/VBoxContainer/TextureRect/Cavalo"]
+root_node = NodePath("../../../../..")
+libraries = {
+"": SubResource("AnimationLibrary_fv3hy")
+}
+script = ExtResource("8_mh47c")
+
+[node name="Bispo" type="TextureRect" parent="MarginContainer/VBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = -6.0
+offset_top = 65.0
+offset_right = 90.0
+offset_bottom = 153.0
+texture = ExtResource("4_dyd62")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TextureRect/Bispo"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = -45.0
+offset_right = 686.0
+offset_bottom = 48.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_7clgb")
+text = "Bispo: Move-se em todas
+as diagonais."
+
+[node name="bispo_anim" type="AnimationPlayer" parent="MarginContainer/VBoxContainer/TextureRect/Bispo"]
+root_node = NodePath("../../../../..")
+libraries = {
+"": SubResource("AnimationLibrary_fv3hy")
+}
+script = ExtResource("8_mh47c")
+
+[node name="Torre" type="TextureRect" parent="MarginContainer/VBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = -6.0
+offset_top = 162.0
+offset_right = 90.0
+offset_bottom = 250.0
+texture = ExtResource("5_tergy")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TextureRect/Torre"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = -45.0
+offset_right = 686.0
+offset_bottom = 48.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_7clgb")
+text = "Torre: Move-se na vertical
+e horizontal."
+
+[node name="torre_anim" type="AnimationPlayer" parent="MarginContainer/VBoxContainer/TextureRect/Torre"]
+root_node = NodePath("../../../../..")
+libraries = {
+"": SubResource("AnimationLibrary_fv3hy")
+}
+script = ExtResource("8_mh47c")
+
+[node name="Rainha" type="TextureRect" parent="MarginContainer/VBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = -6.0
+offset_top = 266.0
+offset_right = 90.0
+offset_bottom = 354.0
+texture = ExtResource("6_2mcj4")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TextureRect/Rainha"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = -45.0
+offset_right = 686.0
+offset_bottom = 48.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_7clgb")
+text = "Rainha: Segue todos os movimentos
+exceto do cavalo."
+
+[node name="rainha_anim" type="AnimationPlayer" parent="MarginContainer/VBoxContainer/TextureRect/Rainha"]
+root_node = NodePath("../../../../..")
+libraries = {
+"": SubResource("AnimationLibrary_fv3hy")
+}
+script = ExtResource("8_mh47c")
+
+[node name="Rei" type="TextureRect" parent="MarginContainer/VBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = -6.0
+offset_top = 371.0
+offset_right = 82.0
+offset_bottom = 448.0
+texture = ExtResource("7_veqtu")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TextureRect/Rei"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = -45.0
+offset_right = 686.0
+offset_bottom = 48.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_7clgb")
+text = "Rei: Numa distância de uma casa,
+segue todas as direções.
+Não pode ir para casas atacadas."
+
+[node name="rei_anim" type="AnimationPlayer" parent="MarginContainer/VBoxContainer/TextureRect/Rei"]
+root_node = NodePath("../../../../..")
+libraries = {
+"": SubResource("AnimationLibrary_fv3hy")
+}
+script = ExtResource("8_mh47c")
+
+[node name="Voltar" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -63.0
+offset_right = 55.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 6
+tooltip_text = "Volta para o menu."
+theme = SubResource("Theme_wkk5w")
+theme_override_colors/font_hover_color = Color(0.984314, 0.643137, 0.25098, 1)
+theme_override_colors/font_color = Color(0.898306, 0.771553, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_7clgb")
+theme_override_font_sizes/font_size = 50
+text = "☰
+"
+
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/TextureRect/Peao" to="MarginContainer/VBoxContainer/TextureRect/Peao/peao_anim" method="_on_peao_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/TextureRect/Peao" to="MarginContainer/VBoxContainer/TextureRect/Peao/peao_anim" method="_on_peao_mouse_exited"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/TextureRect/Cavalo" to="MarginContainer/VBoxContainer/TextureRect/Peao/peao_anim" method="_on_cavalo_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/TextureRect/Cavalo" to="MarginContainer/VBoxContainer/TextureRect/Peao/peao_anim" method="_on_cavalo_mouse_exited"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/TextureRect/Bispo" to="MarginContainer/VBoxContainer/TextureRect/Peao/peao_anim" method="_on_bispo_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/TextureRect/Bispo" to="MarginContainer/VBoxContainer/TextureRect/Peao/peao_anim" method="_on_bispo_mouse_exited"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/TextureRect/Torre" to="MarginContainer/VBoxContainer/TextureRect/Peao/peao_anim" method="_on_torre_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/TextureRect/Torre" to="MarginContainer/VBoxContainer/TextureRect/Peao/peao_anim" method="_on_torre_mouse_exited"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/TextureRect/Rainha" to="MarginContainer/VBoxContainer/TextureRect/Peao/peao_anim" method="_on_rainha_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/TextureRect/Rainha" to="MarginContainer/VBoxContainer/TextureRect/Peao/peao_anim" method="_on_rainha_mouse_exited"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/TextureRect/Rei" to="MarginContainer/VBoxContainer/TextureRect/Peao/peao_anim" method="_on_rei_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/TextureRect/Rei" to="MarginContainer/VBoxContainer/TextureRect/Peao/peao_anim" method="_on_rei_mouse_exited"]

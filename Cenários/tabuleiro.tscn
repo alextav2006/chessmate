@@ -1,0 +1,315 @@
+[gd_scene load_steps=37 format=3 uid="uid://ijdpj0jn8sk3"]
+
+[ext_resource type="Texture2D" uid="uid://ba782thux300t" path="res://Imagens/Chess_board.png" id="1_a5y32"]
+[ext_resource type="Script" path="res://Cenários/local_tabuleiro.gd" id="2_5ygo3"]
+[ext_resource type="Texture2D" uid="uid://3ntxi5yj3edd" path="res://Imagens/white_queen.png" id="3_kgmk4"]
+[ext_resource type="FontFile" uid="uid://b6a4gm1poounk" path="res://fonts/Silkscreen-Regular.ttf" id="3_vrdaw"]
+[ext_resource type="Texture2D" uid="uid://cxj37gdqhsve7" path="res://Imagens/white_knight.png" id="4_b8crh"]
+[ext_resource type="Texture2D" uid="uid://b68j72cnkvmy6" path="res://Imagens/white_bishop.png" id="5_nlbt6"]
+[ext_resource type="Texture2D" uid="uid://dmki5cwbajxlb" path="res://Imagens/white_rook.png" id="6_305b1"]
+[ext_resource type="Texture2D" uid="uid://da7lnc2cuiawl" path="res://Imagens/black_queen.png" id="7_oixir"]
+[ext_resource type="Texture2D" uid="uid://ckrxqmw8vimbk" path="res://Imagens/black_knight.png" id="8_w256y"]
+[ext_resource type="Texture2D" uid="uid://ca4qx600jqv43" path="res://Imagens/black_bishop.png" id="9_qbjof"]
+[ext_resource type="Texture2D" uid="uid://cwg648iokrmx4" path="res://Imagens/black_rook.png" id="10_h7vwo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_trqk5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6pmsv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_alas8"]
+texture = ExtResource("3_kgmk4")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f6ckr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sdoyi"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ip5nj"]
+texture = ExtResource("4_b8crh")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3m5fc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0fahe"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r5y1f"]
+texture = ExtResource("5_nlbt6")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tuhch"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nsqrr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xd2o7"]
+texture = ExtResource("6_305b1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_smk47"]
+texture = ExtResource("7_oixir")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vquey"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ebhw6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0p4jj"]
+texture = ExtResource("8_w256y")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h5mwa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qcwbv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vlj6r"]
+texture = ExtResource("9_qbjof")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qufks"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1bx2n"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hjgxk"]
+texture = ExtResource("10_h7vwo")
+
+[sub_resource type="Animation" id="Animation_kbdyf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_vbqrq"]
+resource_name = "piscar_vitoria"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.01, 2),
+"transitions": PackedFloat32Array(18058.1, 388.024),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ip18i"]
+_data = {
+"RESET": SubResource("Animation_kbdyf"),
+"piscar_vitoria": SubResource("Animation_vbqrq")
+}
+
+[node name="Tabuleiro" type="Sprite2D"]
+position = Vector2(1152, 648)
+scale = Vector2(5.90055, 5.6333)
+texture = ExtResource("1_a5y32")
+script = ExtResource("2_5ygo3")
+
+[node name="Pretas" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 73.6947
+offset_top = -72.0
+offset_right = 141.695
+offset_bottom = -49.0
+theme_override_fonts/font = ExtResource("3_vrdaw")
+theme_override_font_sizes/font_size = 16
+text = "PRETAS"
+
+[node name="Pecas" type="Node2D" parent="."]
+
+[node name="Promoção" type="CanvasLayer" parent="."]
+
+[node name="white_pieces" type="Control" parent="Promoção"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -50.0
+offset_right = 200.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Rainha" type="Button" parent="Promoção/white_pieces" groups=["white_pieces"]]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_trqk5")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_6pmsv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_alas8")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_alas8")
+theme_override_styles/normal = SubResource("StyleBoxTexture_alas8")
+
+[node name="Cavalo" type="Button" parent="Promoção/white_pieces" groups=["white_pieces"]]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 200.0
+offset_bottom = 100.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_f6ckr")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_sdoyi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ip5nj")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_ip5nj")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ip5nj")
+
+[node name="Bispo" type="Button" parent="Promoção/white_pieces" groups=["white_pieces"]]
+layout_mode = 0
+offset_left = 200.0
+offset_right = 300.0
+offset_bottom = 100.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3m5fc")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_0fahe")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r5y1f")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_r5y1f")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r5y1f")
+
+[node name="Torre" type="Button" parent="Promoção/white_pieces" groups=["white_pieces"]]
+layout_mode = 0
+offset_left = 300.0
+offset_right = 400.0
+offset_bottom = 100.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tuhch")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_nsqrr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xd2o7")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_xd2o7")
+theme_override_styles/normal = SubResource("StyleBoxTexture_xd2o7")
+
+[node name="black_pieces" type="Control" parent="Promoção"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -50.0
+offset_right = 200.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Rainha" type="Button" parent="Promoção/black_pieces" groups=["black_pieces"]]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_trqk5")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_6pmsv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_smk47")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_smk47")
+theme_override_styles/normal = SubResource("StyleBoxTexture_smk47")
+
+[node name="Cavalo" type="Button" parent="Promoção/black_pieces" groups=["black_pieces"]]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 200.0
+offset_bottom = 100.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vquey")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_ebhw6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0p4jj")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_0p4jj")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0p4jj")
+
+[node name="Bispo" type="Button" parent="Promoção/black_pieces" groups=["black_pieces"]]
+layout_mode = 0
+offset_left = 200.0
+offset_right = 300.0
+offset_bottom = 100.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h5mwa")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_qcwbv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vlj6r")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_vlj6r")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vlj6r")
+
+[node name="Torre" type="Button" parent="Promoção/black_pieces" groups=["black_pieces"]]
+layout_mode = 0
+offset_left = 300.0
+offset_right = 400.0
+offset_bottom = 100.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qufks")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_1bx2n")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hjgxk")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_hjgxk")
+theme_override_styles/normal = SubResource("StyleBoxTexture_hjgxk")
+
+[node name="Brancas" type="Label" parent="."]
+offset_left = 73.7219
+offset_top = 48.9944
+offset_right = 147.722
+offset_bottom = 71.9944
+theme_override_fonts/font = ExtResource("3_vrdaw")
+theme_override_font_sizes/font_size = 16
+text = "BRANCAS"
+
+[node name="timer_branco" type="Timer" parent="."]
+wait_time = 600.0
+one_shot = true
+autostart = true
+
+[node name="timer_preto" type="Timer" parent="."]
+wait_time = 600.0
+one_shot = true
+autostart = true
+
+[node name="Contagem" type="Label" parent="."]
+offset_left = 73.6947
+offset_right = 131.695
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("3_vrdaw")
+theme_override_font_sizes/font_size = 8
+text = "Tempo: "
+
+[node name="Vitoria" type="Label" parent="."]
+offset_left = -149.477
+offset_top = -11.1835
+offset_right = -77.4772
+offset_bottom = 10.8165
+theme_override_fonts/font = ExtResource("3_vrdaw")
+theme_override_font_sizes/font_size = 16
+text = "VITÓRIA"
+
+[node name="anim_vitoria" type="AnimationPlayer" parent="Vitoria"]
+libraries = {
+"": SubResource("AnimationLibrary_ip18i")
+}
+speed_scale = -1.667
+
+[node name="Menu" type="Button" parent="."]
+offset_left = -149.308
+offset_top = -79.3496
+offset_right = -119.308
+offset_bottom = -38.3496
+tooltip_text = "Volta para o menu."
+theme_override_colors/font_hover_color = Color(0.17832, 0.21805, 0.734081, 1)
+theme_override_colors/font_color = Color(0.310595, 0.421274, 0.95771, 1)
+theme_override_fonts/font = ExtResource("3_vrdaw")
+theme_override_font_sizes/font_size = 24
+text = "☰"
+flat = true
+
+[node name="Restart" type="Button" parent="."]
+offset_left = -151.85
+offset_top = 27.1599
+offset_right = -116.85
+offset_bottom = 79.1599
+tooltip_text = "Recomeça o jogo."
+theme_override_colors/font_hover_color = Color(0.176471, 0.219608, 0.733333, 1)
+theme_override_colors/font_color = Color(0.2369, 0.399032, 0.951675, 1)
+theme_override_fonts/font = ExtResource("3_vrdaw")
+theme_override_font_sizes/font_size = 32
+text = "↻"
+flat = true
+
+[node name="pisca_board" type="CheckButton" parent="."]
+offset_left = -121.684
+offset_top = 44.734
+offset_right = -77.6836
+offset_bottom = 68.734
+tooltip_text = "Tema noturno no tabuleiro."
+focus_mode = 0
+
+[connection signal="toggled" from="pisca_board" to="." method="_on_pisca_board_toggled"]

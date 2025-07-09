@@ -1,0 +1,2 @@
+https://docs.godotengine.org/pt-br/4.x/getting_started/introduction/introduction_to_godot.html
+https://www.dio.me/articles/explorando-a-godot-uma-engine-promissora-para-desenvolvedores-independentes
